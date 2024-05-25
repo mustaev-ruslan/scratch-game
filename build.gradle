@@ -18,9 +18,7 @@ openApiGenerate {
             interfaceOnly                 : "true",
             serializationLibrary          : "jackson",
             useJakartaEe                  : "true",
-//            containerDefaultToNull: "true",
-            // TODO either remove containerDefaultToNull or Builder
-            additionalModelTypeAnnotations: "@lombok.Builder @lombok.AllArgsConstructor"
+            additionalModelTypeAnnotations: "@lombok.AllArgsConstructor",
     ]
     globalProperties = [
             models    : "",

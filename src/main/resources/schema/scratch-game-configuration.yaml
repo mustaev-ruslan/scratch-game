@@ -1,0 +1,163 @@
+openapi: 3.0.3
+info:
+  title: Scratch game
+  description: Scratch game configuration, input and output
+  version: 1.0.0
+  contact:
+    name: Ruslan Mustaev
+    email: mustaev.ruslan@hotmail.com
+    url: https://github.com/mustaev-ruslan/scratch-game
+paths: { }
+components:
+  schemas:
+    ScratchGameConfiguration:
+      type: object
+      properties:
+        columns:
+          description: number of columns in the matrix
+          type: integer
+        rows:
+          description: number of rows in the matrix
+          type: integer
+        symbols:
+          description: list of symbols
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/Symbol'
+        probabilities:
+          $ref: '#/components/schemas/Probabilities'
+        win_combinations:
+          description: list of winning combinations
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/WinCombination'
+
+    Symbol:
+      type: object
+      properties:
+        reward_multiplier:
+          description: will multiply betting amount
+          type: number
+        type:
+          description: can be either standard or bonus
+          enum:
+            - standard
+            - bonus
+        extra:
+          description: >
+            [only for bonuses] extra amount which will be added to the reward
+          type: number
+        impact:
+          description: >
+            [only for bonuses] fixed values:
+            multiply_reward (which multiply final reward to symbol.{X}.reward_multiplier),
+            extra_bonus(will add symbol.{X}.extra to the final reward),
+            miss(nothing)
+          enum:
+            - multiply_reward
+            - extra_bonus
+            - miss
+
+    Probabilities:
+      description: list of probabilities
+      type: object
+      properties:
+        standard_symbols:
+          description: list of probabilities for standard symbols
+          type: array
+          items:
+            $ref: '#/components/schemas/StandardSymbol'
+        bonus_symbols:
+          description: list of probabilities for bonus symbols
+          type: object
+          properties:
+            symbols:
+              $ref: '#/components/schemas/ProbabilitySymbols'
+
+
+    StandardSymbol:
+      type: object
+      properties:
+        column:
+          description: column index
+          type: integer
+        row:
+          description: row index
+          type: integer
+        symbols:
+          $ref: '#/components/schemas/ProbabilitySymbols'
+
+    ProbabilitySymbols:
+      description: >
+        map of a symbol and it's probability number
+        (to calculate to probability percentage just sum all symbols probability numbers and 
+        divide individual symbol's probability number to total probability numbers)
+      type: object
+      additionalProperties:
+        type: number
+
+    WinCombination:
+      type: object
+      properties:
+        reward_multiplier:
+          description: will multiply reward
+          type: number
+        count:
+          description: required count of the same symbols to activate the reward
+          type: integer
+        group:
+          description: >
+            group which the winning combination belongs to,
+            max 1 winning combination should be applied for each win combination group
+          type: string
+        when:
+          description: >
+            fixed values:
+              same_symbols (if one symbol repeated in the matrix probabilities.win_combinations.{X}.count times),
+              linear_symbols (if it matches to probabilities.win_combinations.{X}.covered_areas)
+          enum:
+            - same_symbols
+            - linear_symbols
+        covered_areas:
+          description: >
+            array of array of strings which is described as "%d:%d" 
+            which demonstrates row and column number respectively
+          type: array
+          items:
+            type: array
+            items:
+              type: string
+              pattern: '^\d+:\d+$'
+
+    Input:
+      type: object
+      required:
+        - bet_amount
+      properties:
+        bet_amount:
+          description: betting amount
+          type: number
+
+    Output:
+      type: object
+      properties:
+        matrix:
+          description: generated 2D matrix
+          type: array
+          items:
+            type: array
+            items:
+              type: string
+        reward:
+          description: final reward which user won
+          type: number
+        applied_winning_combinations:
+          description: Map of Symbol and List of applied winning combinations
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
+        applied_bonus_symbol:
+          description: applied bonus symbol (can be null if the bonus is MISS)
+          type: string

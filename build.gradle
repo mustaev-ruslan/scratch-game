@@ -1,8 +1,50 @@
+buildscript {
+    ext {
+        lombokVersion = '1.18.26'
+    }
+}
 plugins {
     id 'java'
+    id "org.openapi.generator" version "7.5.0"
 }
 
-group 'org.example'
+openApiGenerate {
+    generatorName = "java"
+    library = "native"
+    inputSpec = "$rootDir/src/main/resources/schema/scratch-game-configuration.yaml"
+    outputDir = "${layout.buildDirectory.get().asFile}/generated"
+    modelPackage = "org.scratchgame.model"
+    configOptions = [
+            interfaceOnly                 : "true",
+            serializationLibrary          : "jackson",
+            useJakartaEe                  : "true",
+//            containerDefaultToNull: "true",
+            // TODO either remove containerDefaultToNull or Builder
+            additionalModelTypeAnnotations: "@lombok.Builder @lombok.AllArgsConstructor"
+    ]
+    globalProperties = [
+            models    : "",
+            modelTests: "false",
+            modelDocs : "false",
+            apis      : "false",
+    ]
+}
+sourceSets.main.java.srcDir "${layout.buildDirectory.get().asFile}/generated/src/main/java"
+compileJava.dependsOn tasks.openApiGenerate
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'org.scratchgame.Main'
+        )
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
+group 'org.scratchgame'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -10,6 +52,19 @@ repositories {
 }
 
 dependencies {
+    // TODO versions
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    implementation 'org.slf4j:slf4j-api:2.0.13'
+    implementation 'ch.qos.logback:logback-classic:1.5.6'
+    implementation 'org.jcommander:jcommander:1.83'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.1'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.17.1'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.17.1'
+    implementation 'jakarta.annotation:jakarta.annotation-api:3.0.0'
+
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }

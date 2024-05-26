@@ -2,7 +2,7 @@ package org.scratchgame.domain;
 
 import org.scratchgame.model.Probabilities;
 import org.scratchgame.model.ScratchGameConfiguration;
-import org.scratchgame.model.StandardSymbol;
+import org.scratchgame.model.StandardSymbolProbability;
 
 import java.math.BigDecimal;
 import java.util.Map;
@@ -52,8 +52,8 @@ public class ScratchGameGenerator {
 
     private String[][] generateStandardSymbols() {
         String[][] result = new String[rows][columns];
-        for (StandardSymbol standardSymbol : probabilities.getStandardSymbols()) {
-            result[standardSymbol.getRow()][standardSymbol.getColumn()] = generateRandomSymbol(standardSymbol.getSymbols());
+        for (StandardSymbolProbability probability : probabilities.getStandardSymbols()) {
+            result[probability.getRow()][probability.getColumn()] = generateRandomSymbol(probability.getSymbols());
         }
         return result;
     }

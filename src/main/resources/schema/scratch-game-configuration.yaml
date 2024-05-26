@@ -66,7 +66,7 @@ components:
           description: list of probabilities for standard symbols
           type: array
           items:
-            $ref: '#/components/schemas/StandardSymbol'
+            $ref: '#/components/schemas/StandardSymbolProbability'
         bonus_symbols:
           description: list of probabilities for bonus symbols
           type: object
@@ -75,7 +75,7 @@ components:
               $ref: '#/components/schemas/ProbabilitySymbols'
 
 
-    StandardSymbol:
+    StandardSymbolProbability:
       type: object
       properties:
         column:

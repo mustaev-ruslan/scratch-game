@@ -11,13 +11,20 @@ import java.io.File;
 
 @Slf4j
 public class ScratchGame {
+
+    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+
     @SneakyThrows
     public void play(Parameters parameters) {
-        ObjectMapper objectMapper = new ObjectMapper();
-        File configFile = new File(parameters.getConfigPath());
-        ScratchGameConfiguration scratchGameConfiguration = objectMapper.readValue(configFile, ScratchGameConfiguration.class);
+        Input input = new Input(parameters.getBettingAmount());
+        InputValidator.validate(input);
+
+        ScratchGameConfiguration scratchGameConfiguration = OBJECT_MAPPER.readValue(
+                new File(parameters.getConfigPath()), ScratchGameConfiguration.class);
+        ConfigurationValidator.validate(scratchGameConfiguration);
+
         Matrix matrix = new ScratchGameGenerator(scratchGameConfiguration).generate();
-        Output output = new ScratchGameChecker(scratchGameConfiguration).check(matrix, new Input(parameters.getBettingAmount()));
-        log.info("{}", objectMapper.writeValueAsString(output));
+        Output output = new ScratchGameChecker(scratchGameConfiguration).check(matrix, input);
+        log.info("{}", OBJECT_MAPPER.writeValueAsString(output));
     }
 }

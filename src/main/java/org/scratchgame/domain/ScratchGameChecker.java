@@ -143,7 +143,7 @@ public class ScratchGameChecker {
         }
         Map<String, List<String>> result = new HashMap<>();
         for (AppliedWinningCombination combination : appliedWinningCombinations) {
-            result.put(combination.standardSymbol().name(), combination.combinations().keySet().stream().toList());
+            result.put(combination.standardSymbol().name(), combination.combinations().keySet().stream().sorted().toList());
         }
         return result;
     }

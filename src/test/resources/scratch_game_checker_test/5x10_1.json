@@ -1,0 +1,713 @@
+{
+  "columns": 10,
+  "rows": 5,
+  "symbols": {
+    "A": {
+      "reward_multiplier": 50,
+      "type": "standard"
+    },
+    "B": {
+      "reward_multiplier": 25,
+      "type": "standard"
+    },
+    "C": {
+      "reward_multiplier": 10,
+      "type": "standard"
+    },
+    "D": {
+      "reward_multiplier": 5,
+      "type": "standard"
+    },
+    "E": {
+      "reward_multiplier": 3,
+      "type": "standard"
+    },
+    "F": {
+      "reward_multiplier": 1.5,
+      "type": "standard"
+    },
+    "10x": {
+      "reward_multiplier": 10,
+      "type": "bonus",
+      "impact": "multiply_reward"
+    },
+    "5x": {
+      "reward_multiplier": 5,
+      "type": "bonus",
+      "impact": "multiply_reward"
+    },
+    "+1000": {
+      "extra": 1000,
+      "type": "bonus",
+      "impact": "extra_bonus"
+    },
+    "+500": {
+      "extra": 500,
+      "type": "bonus",
+      "impact": "extra_bonus"
+    },
+    "MISS": {
+      "type": "bonus",
+      "impact": "miss"
+    }
+  },
+  "probabilities": {
+    "standard_symbols": [
+      {
+        "column": 0,
+        "row": 0,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 0,
+        "row": 1,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 0,
+        "row": 2,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 0,
+        "row": 3,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 0,
+        "row": 4,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 1,
+        "row": 0,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 1,
+        "row": 1,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 1,
+        "row": 2,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 1,
+        "row": 3,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 1,
+        "row": 4,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 2,
+        "row": 0,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 2,
+        "row": 1,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 2,
+        "row": 2,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 2,
+        "row": 3,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 2,
+        "row": 4,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 3,
+        "row": 0,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 3,
+        "row": 1,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 3,
+        "row": 2,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 3,
+        "row": 3,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 3,
+        "row": 4,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 4,
+        "row": 0,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 4,
+        "row": 1,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 4,
+        "row": 2,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 4,
+        "row": 3,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 4,
+        "row": 4,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 5,
+        "row": 0,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 5,
+        "row": 1,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 5,
+        "row": 2,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 5,
+        "row": 3,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 5,
+        "row": 4,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 6,
+        "row": 0,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 6,
+        "row": 1,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 6,
+        "row": 2,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 6,
+        "row": 3,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 6,
+        "row": 4,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 7,
+        "row": 0,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 7,
+        "row": 1,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 7,
+        "row": 2,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 7,
+        "row": 3,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 7,
+        "row": 4,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 8,
+        "row": 0,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 8,
+        "row": 1,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 8,
+        "row": 2,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 8,
+        "row": 3,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 8,
+        "row": 4,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 9,
+        "row": 0,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 9,
+        "row": 1,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 9,
+        "row": 2,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 9,
+        "row": 3,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      },
+      {
+        "column": 9,
+        "row": 4,
+        "symbols": {
+          "A": 1,
+          "B": 2,
+          "C": 3,
+          "D": 4,
+          "E": 5,
+          "F": 6
+        }
+      }
+    ],
+    "bonus_symbols": {
+      "symbols": {
+        "10x": 1,
+        "5x": 2,
+        "+1000": 3,
+        "+500": 4,
+        "MISS": 5
+      }
+    }
+  },
+  "win_combinations": {
+    "zig_zag": {
+      "reward_multiplier": 100,
+      "when": "linear_symbols",
+      "group": "zig_zag",
+      "covered_areas": [
+        [
+          "0:0",
+          "1:1",
+          "2:2",
+          "3:3",
+          "4:4",
+          "3:5",
+          "2:6",
+          "1:7",
+          "0:8",
+          "1:9"
+        ]
+      ]
+    },
+    "corners": {
+      "reward_multiplier": 50,
+      "when": "linear_symbols",
+      "group": "corners",
+      "covered_areas": [
+        [
+          "0:0",
+          "0:1",
+          "1:0",
+          "1:1",
+          "0:9",
+          "0:8",
+          "1:9",
+          "1:8",
+          "3:0",
+          "3:1",
+          "4:0",
+          "4:1",
+          "3:8",
+          "3:9",
+          "4:8",
+          "4:9"
+        ]
+      ]
+    }
+  }
+}
